@@ -1,0 +1,17 @@
+<form action="">
+    <view class="login-list">
+        <view class="login-list-header">
+            <view class="login-list-icon"><image src="../image/phone.png"></image></view>
+            <view class="login-list-text">手机号码</view>
+        </view>
+        <view class="login-list-input"><input type="text" placeholder="请输入手机号码" placeholder-class="input"/></view>
+    </view>
+    <view class="login-list">
+        <view class="login-list-header">
+            <view class="login-list-icon"><image src="../image/phone.png"></image></view>
+            <view class="login-list-text">手机号码</view>
+        </view>
+        <view class="login-list-input"><input type="text" placeholder="请输入手机号码" placeholder-class="input"/></view>
+    </view>
+
+</form>

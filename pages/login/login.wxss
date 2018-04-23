@@ -1,0 +1,42 @@
+/* pages/login/login.wxss */
+.login-list{
+    width: 710rpx;
+    height: 200rpx;
+    padding: 30rpx 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items: flex-start;
+}
+.login-list-header{
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 30rpx;
+}
+.login-list-text{
+    font-size: 36rpx;
+}
+.login-list-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-list-icon image{
+    width: 44rpx;
+    height: 44rpx;
+}
+
+.login-list-input input{
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 30rpx;
+    border-bottom: 1px solid #ccc;
+}
+.input{
+    font-size: 26rpx;
+    color:#C0BEBE;
+}

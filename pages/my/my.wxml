@@ -1,0 +1,26 @@
+<view class="my-bg">
+    <image src="../image/myBg.png"></image>
+</view>
+<view class="my-header">
+    <navigator url="../">
+        <view class="my-header-login">注册/登录</view>
+    </navigator>
+    <view class="my-header-image">
+        <image  src="../image/updata.png"></image>
+    </view>
+    <view class="my-header-name">杨森</view>
+</view>
+<view class="my-money">
+    <view class="my-gold">账户余额  200金币</view>
+    <view class="my-pay" >立即充值</view>
+</view>
+<view class="my-list">
+    <view class="my-li">
+        <view class="my-li-name">核验资费</view>
+        <view class="my-li-btn">10金币/次</view>
+    </view>
+    <view class="my-li">
+        <view class="my-li-name">10金币/次</view>
+        <view class="my-li-btn zan-icon zan-icon-arrow">   <button class="contentBtn"> > </button> </view>
+    </view>
+</view>

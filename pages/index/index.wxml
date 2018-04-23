@@ -1,0 +1,27 @@
+<view class="index-header">
+  <image src='../image/indexBg.png'></image>
+</view>
+<view class="index-content">
+  <view class="index-content-title">
+    <view class="index-content-left"><image src="../image/indexLeft.png"></image></view>
+    <view class="index-content-text">执正反欺诈</view>
+    <view class="index-content-right"><image src="../image/indexRight.png"></image></view>
+  </view>
+  <view class="index-content-context">无感知位置核验对当前号码所在位置进行校验，用于保险反欺诈，金融行业支付安全辅助认证、信用卡发卡信息核对、征信、风控管理，信贷机构贷前审核、贷中、贷后位置反欺诈管理场景。</view>
+</view>
+<view class="index-section">
+  <view class="index-section-card">
+    <view class="index-section-btn">位置核验</view>
+    <view class="index-section-text">地址+号码 核实号码有没有在当前区域使用，50公里内，结果为YES+偏移范围，超过50公里结果为NO</view>
+  </view>
+  <view class="index-section-card">
+    <view class="index-section-btn index-section-btn1">当前城市核验</view>
+    <view class="index-section-text">城市+号码核实号码有没有在当前城市
+    </view>
+  </view>
+  <view class="index-section-card">
+    <view class="index-section-btn index-section-btn2">常用地址核验</view>
+    <view class="index-section-text">提供常用地址+名字身份证号码 核实是否为常用地址
+    </view>
+  </view>
+</view>

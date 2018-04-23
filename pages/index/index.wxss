@@ -1,0 +1,59 @@
+.index-header image{
+  width: 100%;
+  height: 380rpx;
+}
+
+.index-content{
+  width: 700rpx;
+  height: 308rpx;
+  position: fixed;
+  top:159rpx;
+  left: 3.5%;
+  font-size: 26rpx;
+  color:#666666;
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx #666;
+}
+
+
+/*首页主体*/
+.index-section{
+  margin-top:1000rpx;
+  width: 700rpx;
+  height: 510rpx;
+  margin: 0 auto;
+  box-shadow: 0 0 10rpx #666;
+  border-radius: 10rpx;
+  padding: 40rpx ;
+}
+.index-section-card{
+  width: 600rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.index-section-btn{
+  width: 280rpx;
+  height:58rpx;
+  border-radius:25rpx;
+  line-height: 58rpx;
+  background: linear-gradient(to right, #faf6fe , #ecdffa);
+  text-align: center;
+  color:#624FBA;
+  font-size: 32rpx;
+  margin-bottom: 24rpx;
+}
+.index-section-text{
+  font-size: 26rpx;
+  line-height: 36rpx;
+  cololr:#666;
+}
+.index-section-btn1{
+  background: linear-gradient(to right, #e5eafd , #f5f7fe);
+}
+.index-section-btn2{
+  background: linear-gradient(to right, #ecdffa , #faf6fe);
+}

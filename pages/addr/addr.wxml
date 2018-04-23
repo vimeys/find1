@@ -1,0 +1,42 @@
+<view class="select">
+    <view class="select-city on">当前城市核验</view>
+    <view class="select-addr">当前城市核验</view>
+</view>
+<view class="select-city-list">
+    <view class="select-city-li">
+        <view class="select-city-name">省/自治区</view>
+        <view class="select-input">
+            <picker >
+                <view class="select-picker">
+                    <view class="">请选择省/自治区</view>
+                    <view class="zan-icon zan-icon-arrow"></view>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="select-city-li">
+        <view class="select-city-name">市/区</view>
+        <view class="select-input">
+            <picker >
+                <view class="select-picker">
+                    <view class="">请选择市//区</view>
+                    <view class="zan-icon zan-icon-arrow"></view>
+                </view>
+            </picker>
+        </view>
+    </view>
+    <view class="select-city-li">
+        <view class="select-city-name">
+            <picker >
+                <view class="select-picker">
+                    <view class="">联通</view>
+                    <view class="zan-icon zan-icon-arrow">▼</view>
+                </view>
+            </picker>
+        </view>
+        <view class="select-input">
+            <input type="text"/>
+        </view>
+    </view>
+
+</view>

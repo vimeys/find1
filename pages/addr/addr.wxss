@@ -1,0 +1,55 @@
+/* pages/addr/addr.wxss */
+.select{
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    justify-content: space-around;
+    line-height: 100rpx;
+    box-shadow: 14rpx 0 0 #666666;
+    background: #fff;
+}
+.select view{
+    /*width: 50%;*/
+    height: 80rpx;
+    color:#333;
+    font-size: 32rpx;
+    text-align: center;
+}
+.select .on{
+    color:#3C6CB8;
+    border-bottom: 1px solid #3C6CB8;
+}
+.select-city-list{
+    width: 100%;
+    /*height: 140rpx;*/
+    display: flex;
+    padding: 0 30rpx;
+    flex-direction: column;
+}
+.select-city-li{
+    display: flex;
+    height: 100rpx;
+
+    padding: 0 30rpx;
+    /*line-height: 140rpx;*/
+    margin-top:40rpx;
+    line-height: 100rpx;
+    border-bottom: 1px solid #ccc;
+}
+.select-city-name{
+    width:200rpx;
+    font-size: 32rpx;
+    color: #333;
+}
+.select-input{
+    flex: 1;
+
+}
+.select-picker{
+    font-size: 28rpx;
+    color:#666;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

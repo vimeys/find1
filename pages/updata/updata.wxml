@@ -1,0 +1,5 @@
+<view class="updata-header">请上传营业执照</view>
+<view class="updata-image">
+    <image src="../image/updata.png"></image>
+</view>
+<view class="btn">确认上传</view>
