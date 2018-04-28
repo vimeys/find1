@@ -40,9 +40,13 @@ Page(Object.assign({},Zan,Toast,{
     },
     onShow(){
         let user=wx.getStorageSync('user');
+
         if(user){
             ajax.promise(url.url.user,{uid:user.uid}).then((json)=>{
                 console.log(json);
+                if(json.data.state==1){
+                    wx.removeStorageSync('isUp')
+                }
                 wx.setStorageSync('userId',json.data);
                 this.setData({
                     golds:json.data.golds
@@ -65,60 +69,66 @@ Page(Object.assign({},Zan,Toast,{
     },
     dialog(){
         let user=wx.getStorageSync('userId');
-        if(user.state==0){//0是跳转上传,1是已经通过
-            wx.navigateTo({
-              url: '../updata/updata'
-            })
+        let isUp=wx.getStorageSync('isUp');
+        if(isUp){
+            this.showZanToast('您已上传了营业执照，请等待审核结果！')
         }else{
-            ajax.promise(url.url.payList,{}).then((json)=>{
-                    let arr=[]
-                json.data.map(function (item,index) {
-                    let obj={}
-                    obj.text=item.goods_name;
-                    obj.type=item.id;
-                    obj.color='red'
-                     return arr.push(obj)
-
+            if(user.state==0){//0是跳转上传,1是已经通过
+                wx.navigateTo({
+                    url: '../updata/updata'
                 })
-                arr.push({
-                                text: '取消',
-                                type: 'cancel'
-                            });
-                this.showZanDialog({
-                    title: '请选择充值套餐',
-                    // content: '这是一个模态弹窗',
-                    buttonsShowVertical: true,
-                    buttons: arr
-                }).then(({ type }) => {
-                    console.log(type);
-                    ajax.promise(url.url.pay,{uid:user.id,goods_id:type}).then(json=>{
-                        let Data=json.data;
-                        wx.requestPayment({
-                           'timeStamp':Data.timeStamp,
-                           'nonceStr': Data.nonceStr,
-                           'package': Data.package,
-                           'signType': 'MD5',
-                           'paySign':Data.paySign,
-                           'success':res => {
-                               console.log(res);
-                               ajax.promise(url.url.user,{uid:user.id}).then((json)=>{
-                                   console.log(json);
-                                   wx.setStorageSync('userId',json.data);
-                                   this.setData({
-                                       golds:json.data.golds
-                                   })
-                               })
-                           },
-                           'fail': res => {
-                               console.log(res);
-                           }
-                        })
-                    })
-                });
-                console.log(arr);
-            });
+            }else{
+                ajax.promise(url.url.payList,{}).then((json)=>{
+                    let arr=[]
+                    json.data.map(function (item,index) {
+                        let obj={}
+                        obj.text=item.goods_name;
+                        obj.type=item.id;
+                        obj.color='red'
+                        return arr.push(obj)
 
+                    })
+                    arr.push({
+                        text: '取消',
+                        type: 'cancel'
+                    });
+                    this.showZanDialog({
+                        title: '请选择充值套餐',
+                        // content: '这是一个模态弹窗',
+                        buttonsShowVertical: true,
+                        buttons: arr
+                    }).then(({ type }) => {
+                        console.log(type);
+                        ajax.promise(url.url.pay,{uid:user.id,goods_id:type}).then(json=>{
+                            let Data=json.data;
+                            wx.requestPayment({
+                                'timeStamp':Data.timeStamp,
+                                'nonceStr': Data.nonceStr,
+                                'package': Data.package,
+                                'signType': 'MD5',
+                                'paySign':Data.paySign,
+                                'success':res => {
+                                    console.log(res);
+                                    ajax.promise(url.url.user,{uid:user.id}).then((json)=>{
+                                        console.log(json);
+                                        wx.setStorageSync('userId',json.data);
+                                        this.setData({
+                                            golds:json.data.golds
+                                        })
+                                    })
+                                },
+                                'fail': res => {
+                                    console.log(res);
+                                }
+                            })
+                        })
+                    });
+                    console.log(arr);
+                });
+
+            }
         }
+
         console.log(this);
 
     },

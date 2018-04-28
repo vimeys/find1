@@ -153,5 +153,6 @@ module.exports = {// 导出函数库
     postAjax: postAjax,
     ask:ask,
     promise,
+    promiseX,
     promiseHasHeader
 }

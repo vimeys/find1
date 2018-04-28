@@ -1,4 +1,4 @@
-const Url='http://172.200.1.132:1203/mapapi/';
+const Url='http://39.108.177.168/mapapi/';
 const url={};
 
 

@@ -54,6 +54,7 @@ Page({
                     title: '提交成功'
                 })
                 setTimeout(()=>{
+                    wx.setStorageSync('isUp',1);
                     wx.switchTab({
                         url: '../my/my'
                     })
