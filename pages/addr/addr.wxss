@@ -53,3 +53,97 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+/*下拉选择*/
+.select-option{
+    width: 170rpx;
+    height: 78rpx;
+    border-radius:10rpx;
+    color:#3C6CB8;
+    border:1px solid #3C6CB8;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+.select-option-text{
+    border-right:1px solid #3C6CB8;
+    width: 120rpx;
+    text-align: center;line-height: 78rpx;
+}
+.select-option-symbol{
+    text-align: center;
+    line-height: 78rpx;
+}
+.select-option-symbol{
+    flex: 1;
+}
+.select-option-lt{
+    width: 170rpx;
+    height: 48rpx;
+    text-align: center;
+    line-height: 48rpx;
+    font-size: 32rpx;
+    margin-top: 1px;
+    border: 1px solid #3C6CB8;
+    /*position: absolute;*/
+    /*color:#fff*/
+}
+.select-option-active{
+    color: #fff;
+    background: #3C6CB8;
+}
+.select-option-dx{
+    width: 170rpx;
+    height: 48rpx;
+    text-align: center;
+    line-height: 48rpx;
+    font-size: 32rpx;
+    border: 1px solid #3C6CB8;
+    /*position: absolute;*/
+    /*top:256rpx;*/
+}
+input{
+    height: 78rpx;
+}
+/*input样式*/
+.ph-style{
+    color:#999;
+    font-size: 30rpx;
+}
+
+/*核验结果*/
+.select-btn-items{
+    width: 100%;
+    height: 90rpx;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100rpx;
+    padding: 0 30rpx;
+}
+.select-btn-ver{
+    width: 446rpx;
+    height:90rpx;
+    color:#fff;
+    font-size: 36rpx;
+    background: #3C6CB8;
+    text-align: center;
+    line-height: 90rpx;
+    border-radius: 10rpx;
+    padding:0;
+}
+.select-btn-result{
+    width: 222rpx;
+    height:90rpx;
+    color:#CCCCCC;
+    font-size: 36rpx;
+    text-align: center;
+    line-height: 90rpx;
+    border-radius:10rpx;
+    border: 1px solid #D6D5D6;
+    font-size: 36rpx;
+
+}
+.select-btn-resultd{
+    color:#3C6CB8;
+    border: 1px solid #3C6CB8;
+}

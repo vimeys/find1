@@ -1,5 +1,5 @@
 <view class="updata-header">请上传营业执照</view>
 <view class="updata-image">
-    <image src="../image/updata.png"></image>
+    <image src="{{src}}" bindtap="updata"></image>
 </view>
-<view class="btn">确认上传</view>
+<view class="btn" bindtap="confirm">确认上传</view>

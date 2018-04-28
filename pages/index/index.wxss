@@ -15,14 +15,33 @@
   border-radius: 10rpx;
   box-shadow: 0 0 10rpx #666;
 }
-
+.index-content-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50rpx;
+  margin-bottom: 30rpx;
+}
+.index-content-left image,.index-content-right image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.index-content-text{
+  color:#3C6CB8;
+  font-size: 36rpx;
+  margin: 0 20rpx;
+}
+.index-content-context{
+  font-size: 26rpx;
+  width: 624rpx;
+  margin: 0 auto;
+}
 
 /*首页主体*/
 .index-section{
-  margin-top:1000rpx;
   width: 700rpx;
   height: 510rpx;
-  margin: 0 auto;
+  margin: 100rpx auto 0;
   box-shadow: 0 0 10rpx #666;
   border-radius: 10rpx;
   padding: 40rpx ;
@@ -34,6 +53,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20rpx;
 }
 .index-section-btn{
   width: 280rpx;
@@ -47,7 +67,7 @@
   margin-bottom: 24rpx;
 }
 .index-section-text{
-  font-size: 26rpx;
+  font-size: 24rpx;
   line-height: 36rpx;
   cololr:#666;
 }

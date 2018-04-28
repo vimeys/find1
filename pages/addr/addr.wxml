@@ -1,14 +1,20 @@
+<import src="../../component/dist/toast/index.wxml"/>
+<template is="zan-toast" data="{{zanToast}}"></template>
 <view class="select">
-    <view class="select-city on">当前城市核验</view>
-    <view class="select-addr">当前城市核验</view>
+    <view class="select-city {{isCity==1?'on':''}}" bindtap="click" data-type="1">当前城市核验</view>
+    <view class="select-addr {{isCity==2?'on':''}}" bindtap="click" data-type="2">常用地址核验</view>
 </view>
-<view class="select-city-list">
+<view >
+
+</view>
+<!--城市核验-->
+<view class="select-city-list" hidden="{{isCity==2}}">
     <view class="select-city-li">
         <view class="select-city-name">省/自治区</view>
         <view class="select-input">
-            <picker >
+            <picker range="{{province}}"  value="{{pIndex}}" range-key="name" bindchange="selectP">
                 <view class="select-picker">
-                    <view class="">请选择省/自治区</view>
+                    <view class="">{{province[pIndex].name}}</view>
                     <view class="zan-icon zan-icon-arrow"></view>
                 </view>
             </picker>
@@ -17,9 +23,9 @@
     <view class="select-city-li">
         <view class="select-city-name">市/区</view>
         <view class="select-input">
-            <picker >
+            <picker disabled="{{disableCity}}" range="{{city}}" value="cIndex" range-key="name" bindchange="selectC">
                 <view class="select-picker">
-                    <view class="">请选择市//区</view>
+                    <view class="">{{city[cIndex].name?city[cIndex].name:'请选选择省份'}}</view>
                     <view class="zan-icon zan-icon-arrow"></view>
                 </view>
             </picker>
@@ -27,16 +33,63 @@
     </view>
     <view class="select-city-li">
         <view class="select-city-name">
-            <picker >
-                <view class="select-picker">
-                    <view class="">联通</view>
-                    <view class="zan-icon zan-icon-arrow">▼</view>
+            <!--<picker >-->
+                <view class="select-option" bindtap="select">
+                    <view class="select-option-text">{{operator}}</view>
+                    <view class="select-option-symbol">{{san}}</view>
+                    <!--▲-->
                 </view>
-            </picker>
+                <view hidden="{{showOpt}}" bindtap="optSelect" data-type="1" class="select-option-lt {{active==1?'select-option-active':''}}">联通</view>
+                <view hidden="{{showOpt}}" bindtap="optSelect" data-type="2" class="select-option-dx {{active==2?'select-option-active':''}}" >电信</view>
+            <!--</picker>-->
         </view>
         <view class="select-input">
-            <input type="text"/>
+            <input type="text" placeholder="请输入手机号" placeholder-class="ph-style" bindblur="getPhone"/>
         </view>
     </view>
-
 </view>
+<view class="select-btn-items" hidden="{{isCity==2}}">
+    <view class="select-btn-ver" bindtap="isCity">核验</view>
+    <view class="select-btn-result {{showResult?'select-btn-resultd':''}}">{{result}}</view>
+</view>
+
+
+<!--地址核验-->
+<form bindsubmit="formSubmit">
+<view class="select-city-list" hidden="{{isCity==1}}">
+        <view class="select-city-li">
+            <view class="select-city-name">
+                <!--<picker >-->
+                姓名
+                <!--</picker>-->
+            </view>
+            <view class="select-input">
+                <input type="text" placeholder="请输入姓名" placeholder-class="ph-style" name="name"/>
+            </view>
+        </view>
+        <view class="select-city-li">
+            <view class="select-city-name">
+                <!--<picker >-->
+                身份证
+                <!--</picker>-->
+            </view>
+            <view class="select-input">
+                <input type="text" placeholder="请输入身份证" placeholder-class="ph-style" name="id"/>
+            </view>
+        </view>
+        <view class="select-city-li">
+            <view class="select-city-name">
+                <!--<picker >-->
+                常用地址
+                <!--</picker>-->
+            </view>
+            <view class="select-input">
+                <input type="text" placeholder="请输入手机号" placeholder-class="ph-style" name="addr"/>
+            </view>
+        </view>
+</view>
+<view class="select-btn-items" hidden="{{isCity==1}}">
+    <button class="select-btn-ver"  formType="submit">核验</button>
+    <view class="select-btn-result {{showResult?'select-btn-resultd':''}}">{{result}}</view>
+</view>
+</form>

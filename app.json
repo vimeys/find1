@@ -1,13 +1,13 @@
 {
   "pages":[
-    "pages/addr/addr",
-    "pages/my/my",
-      "pages/updata/updata",
     "pages/index/index",
     "pages/login/login",
+      "pages/updata/updata",
+    "pages/my/my",
+    "pages/declare/declare",
     "pages/signIn/signIn",
     "pages/findPassword/findPassword",
-    "pages/declare/declare",
+    "pages/addr/addr",
     "pages/map/map"
   ],
   "window":{

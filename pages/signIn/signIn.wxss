@@ -1,1 +1,38 @@
 /* pages/signIn/signIn.wxss */
+@import "../login/login.wxss";
+.sign-order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40rpx;
+}
+
+.login-forgetPassword{
+    margin: 0 10rpx;
+}
+.login-code-input{
+  padding-right: 300rpx;
+}
+
+.login-code{
+    position: fixed;
+    top:526rpx;
+    right: 42rpx;
+    width: 200rpx;
+    height: 70rpx;
+    color:#fff;
+    text-align: center;
+    line-height: 70rpx;
+    background:#3C6CB8;
+    font-size: 30rpx;
+    border-radius: 10rpx;
+}
+.login-code-wait{
+    color:#999;
+    background: #fafafa;
+    border: 1px solid #999;
+}
+.disable{
+    color:#666;
+    background: #eee;
+}

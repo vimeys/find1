@@ -1,14 +1,8 @@
 <view class="index-header">
   <image src='../image/indexBg.png'></image>
 </view>
-<view class="index-content">
-  <view class="index-content-title">
-    <view class="index-content-left"><image src="../image/indexLeft.png"></image></view>
-    <view class="index-content-text">执正反欺诈</view>
-    <view class="index-content-right"><image src="../image/indexRight.png"></image></view>
-  </view>
-  <view class="index-content-context">无感知位置核验对当前号码所在位置进行校验，用于保险反欺诈，金融行业支付安全辅助认证、信用卡发卡信息核对、征信、风控管理，信贷机构贷前审核、贷中、贷后位置反欺诈管理场景。</view>
-</view>
+
+
 <view class="index-section">
   <view class="index-section-card">
     <view class="index-section-btn">位置核验</view>
@@ -24,4 +18,12 @@
     <view class="index-section-text">提供常用地址+名字身份证号码 核实是否为常用地址
     </view>
   </view>
+</view>
+<view class="index-content">
+  <view class="index-content-title">
+    <view class="index-content-left"><image src="../image/indexLeft.png"></image></view>
+    <view class="index-content-text">执正反欺诈</view>
+    <view class="index-content-right"><image src="../image/indexRight.png"></image></view>
+  </view>
+  <view class="index-content-context">无感知位置核验对当前号码所在位置进行校验，用于保险反欺诈，金融行业支付安全辅助认证、信用卡发卡信息核对、征信、风控管理，信贷机构贷前审核、贷中、贷后位置反欺诈管理场景。</view>
 </view>

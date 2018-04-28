@@ -13,7 +13,13 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+const storage=name=>{
+
+    let sto=wx.getStorageSync(name);
+    return sto
+}
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+    storage
 }

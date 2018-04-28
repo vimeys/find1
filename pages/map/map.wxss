@@ -1,1 +1,101 @@
 /* pages/map/map.wxss */
+@import '../addr/addr.wxss';
+.select-option-lt{
+    width: 170rpx;
+    height: 48rpx;
+    text-align: center;
+    line-height: 48rpx;
+    font-size: 32rpx;
+    margin-top: 1px;
+    border: 1px solid #3C6CB8;
+    position: absolute;
+    background: #fff;
+    /*color:#fff*/
+}
+
+.select-option-dx{
+    width: 170rpx;
+    height: 48rpx;
+    text-align: center;
+    line-height: 48rpx;
+    font-size: 32rpx;
+    border: 1px solid #3C6CB8;
+    position: absolute;
+    top:256rpx;
+    background: #fff;
+}
+.select-option-active{
+    color: #fff;
+    background: #3C6CB8;
+}
+.map-form{
+    display: flex;
+    padding: 30rpx;
+}
+.map-form-card{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+.map-from-addr input{
+    box-sizing: border-box;
+    width: 100%;
+    height: 78rpx;
+    border-radius: 10rpx;
+    border: 1px solid #5C7CEB;
+    font-size: 32rpx;
+    padding-left: 30rpx;
+}
+
+.map-form-phone{
+    display: flex;
+    justify-content: space-between;
+}
+.map-form-num input{
+    width: 384rpx;
+    height: 78rpx;
+    color: #999;
+    font-size: 32rpx;
+    border: 1px solid #5C7CEB;
+    box-sizing: border-box;
+    padding-left: 30rpx;
+    border-radius: 10rpx;
+}
+
+
+.map-form-btn{
+    width: 130rpx;
+    height: 175rpx;
+    border-radius: 10rpx;
+    color:#fff;
+    background: #3C6CB8;
+    font-size: 36rpx;
+    text-align: center;
+    line-height: 175rpx;
+    margin-left: 20rpx;
+}
+/*公告栏*/
+.NOTICEBAR{
+    font-size: 24rpx;
+    color:#ccc;
+    display: flex;
+    background: #fafafa;
+    padding: 10rpx 30rpx;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+}
+
+
+
+
+/*地图*/
+#map{
+}
+.cover{
+    width: 100%;
+    height: 390px;
+    background: #fff;
+    opacity: .1;
+}

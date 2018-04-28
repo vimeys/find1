@@ -1,2 +1,41 @@
-<!--pages/signIn/signIn.wxml-->
-<text>pages/signIn/signIn.wxml</text>
+<import src="../../component/dist/toast/index.wxml"/>
+<template is="zan-toast" data="{{zanToast}}"></template>
+<form bindsubmit="formSubmit">
+    <view class="login-list mt50">
+        <view class="login-list-header">
+            <view class="login-list-icon"><image src="../image/phone.png"></image></view>
+            <view class="login-list-text">手机号码</view>
+        </view>
+        <view class="login-list-input"><input type="text" placeholder="请输入手机号码"  bindblur='blur' placeholder-class="input" name="name"/></view>
+    </view>
+    <view class="login-list">
+        <view class="login-list-header">
+            <view class="login-list-icon"><image src="../image/password.png"></image></view>
+            <view class="login-list-text">密码</view>
+        </view>
+        <view class="login-list-input"><input name='password' password type="text" placeholder="请输入6到16位数字字母组合" placeholder-class="input"/></view>
+    </view>
+    <view class="login-list">
+        <view class="login-list-header">
+            <view class="login-list-icon"><image src="../image/code.png"></image></view>
+
+            <view class="login-list-text">验证码</view>
+        </view>
+        <view class="login-list-input">
+            <input name="code" type="text" placeholder="请输入手机号码" placeholder-class="input" class="login-code-input"/>
+
+        </view>
+    </view>
+    <button class="btn login-btn {{radio?'disable':''}}" formType="submit">注册</button>
+</form>
+<view class="sign-order">
+    <view class="zan-icon {{radio?'zan-icon-check':'zan-icon-passed'}}" style="color:#3C6CB8" bindtap="radioCheck">
+
+    </view>
+    <navigator url="../declare/declare">
+        <view class="login-forgetPassword">同意《用户协议》和《免责声明》</view>
+    </navigator>
+</view>
+<view class="mark" bindtap="test"><image src="../image/headset.png"></image>客服微信：fanqizha001
+</view>
+<view class="login-code {{}}" bindtap="getCode">{{second}}</view>

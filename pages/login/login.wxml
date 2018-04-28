@@ -1,17 +1,24 @@
-<form action="">
-    <view class="login-list">
+<import src="../../component/dist/toast/index.wxml"/>
+<template is="zan-toast" data="{{zanToast}}"></template>
+<form bindsubmit="formSubmit">
+    <view class="login-list mt50">
         <view class="login-list-header">
             <view class="login-list-icon"><image src="../image/phone.png"></image></view>
             <view class="login-list-text">手机号码</view>
         </view>
-        <view class="login-list-input"><input type="text" placeholder="请输入手机号码" placeholder-class="input"/></view>
+        <view class="login-list-input"><input type="text" placeholder="请输入手机号码" placeholder-class="input" name="phone"/></view>
     </view>
     <view class="login-list">
         <view class="login-list-header">
-            <view class="login-list-icon"><image src="../image/phone.png"></image></view>
-            <view class="login-list-text">手机号码</view>
+            <view class="login-list-icon"><image src="../image/password.png"></image></view>
+            <view class="login-list-text">密码</view>
         </view>
-        <view class="login-list-input"><input type="text" placeholder="请输入手机号码" placeholder-class="input"/></view>
+        <view class="login-list-input"><input type="text" password placeholder="请输入手机号码" placeholder-class="input" name="psssword"/></view>
     </view>
-
+    <button class="btn login-btn" form-type="submit" bindtap="test">登陆</button>
+    <navigator url="../findPassword/findPassword">
+        <view class="login-forgetPassword">忘记密码？</view>
+    </navigator>
+    <view class="mark"><image src="../image/headset.png"></image>客服微信：fanqizha001
+    </view>
 </form>

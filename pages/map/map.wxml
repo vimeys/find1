@@ -1,1 +1,51 @@
-<map id="map" longitude="113.324520" latitude="23.099994" scale="11" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;" circles="{{circles}}"></map>
+<import src="../../component/dist/toast/index.wxml"/>
+<template is="zan-toast" data="{{zanToast}}"></template>
+<template is="zan-dialog" data="{{ zanDialog }}"></template>
+<template is="zan-toast" data="{{zanToast}}"></template>
+<view class="map-form">
+    <view class="map-form-card">
+        <view class="map-from-addr">
+            <input type="text" placeholder="搜索地址" bindblur="getLon" value="{{value}}"/>
+        </view>
+        <view class="map-form-phone">
+            <view class="select-city-name">
+                <!--<picker >-->
+                <view class="select-option" bindtap="select">
+                    <view class="select-option-text">{{operator}}</view>
+                    <view class="select-option-symbol">{{san}}</view>
+                    <!--▲-->
+                </view>
+                <view hidden="{{showOpt}}" bindtap="optSelect" data-type="1"
+                      class="select-option-lt {{active==1?'select-option-active':''}}">联通
+                </view>
+                <view hidden="{{showOpt}}" bindtap="optSelect" data-type="2"
+                      class="select-option-dx {{active==2?'select-option-active':''}}">电信
+                </view>
+                <!--</picker>-->
+            </view>
+            <view class="map-form-num">
+                <input type="text" placeholder="请输入核验手机号" bindblur="getPhone"/>
+            </view>
+        </view>
+    </view>
+    <view class="map-form-btn" bindtap="test">核验</view>
+</view>
+<view class="NOTICEBAR">
+    <view class="NOTICEBAR-text">点击后地图不可操作，再次点击后解锁</view>
+    <view class="switch"><switch  bindchange="switchChange"/></view>
+</view>
+
+<map id="map"
+     longitude="{{longitude}}"
+     latitude="{{latitude}}"
+     scale="11"
+     controls="{{controls}}"
+     bindcontroltap="controltap"
+     markers="{{markers}}"
+     bindmarkertap="markertap"
+     polyline="{{polyline}}"
+     bindregionchange="getCenterLocation"
+     show-location style="width: 100%; height: 390px;"
+     circles="{{circles}}">
+    <cover-view class="cover" wx:if="{{isCover}}"></cover-view>
+</map>

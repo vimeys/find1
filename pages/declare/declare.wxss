@@ -1,1 +1,65 @@
 /* pages/declare/declare.wxss */
+.deal{
+    display: flex;
+    flex-direction: column;
+    justify-items:center;
+    align-items: center;
+    position: relative;
+    width: 702rpx;
+    height: 266rpx;
+    box-shadow: 10rpx 10rpx 10rpx rgba(51,51,51,0.1);
+    margin: 50rpx auto 0;
+    background:#fff;
+    border-radius: 10rpx;
+}
+.deal-image{
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top:50rpx;
+    left: 50rpx;
+}
+.deal-name{
+    color: #333;
+    font-size: 36rpx;
+    text-align: center;
+    margin: 50rpx auto 30rpx;
+}
+.deal-content{
+    font-size: 26rpx;
+    width: 620rpx;
+    margin: auto;
+    color:#666;
+}
+.declare{
+    display: flex;
+    flex-direction: column;
+    justify-items:center;
+    align-items: center;
+    position: relative;
+    width: 702rpx;
+    height: 394rpx;
+    box-shadow: 10rpx 10rpx 10rpx rgba(51,51,51,0.1);
+    margin: 50rpx auto 0;
+    background:#fff;
+    border-radius: 10rpx;
+}
+.declare-bgImage{
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top:50rpx;
+    right: 50rpx;
+}
+.declare-name{
+    color: #333;
+    font-size: 36rpx;
+    text-align: center;
+    margin: 50rpx auto 30rpx;
+}
+.declare-context{
+    font-size: 26rpx;
+    width: 620rpx;
+    margin: auto;
+    color:#666;
+}

@@ -80,6 +80,7 @@ page{
     padding: 0 30rpx;
     color:#666;
     font-size: 32rpx;
+    background: #fff;
 }
 .my-li{
     display: flex;
