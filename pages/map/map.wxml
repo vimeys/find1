@@ -1,7 +1,8 @@
 <import src="../../component/dist/toast/index.wxml"/>
 <template is="zan-toast" data="{{zanToast}}"></template>
+<import src="../../component/dist/dialog/index.wxml" />
 <template is="zan-dialog" data="{{ zanDialog }}"></template>
-<template is="zan-toast" data="{{zanToast}}"></template>
+
 <view class="map-form">
     <view class="map-form-card">
         <view class="map-from-addr">

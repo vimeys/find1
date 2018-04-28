@@ -103,7 +103,7 @@
     /*top:256rpx;*/
 }
 input{
-    height: 78rpx;
+    height: 98rpx;
 }
 /*input样式*/
 .ph-style{
@@ -129,7 +129,8 @@ input{
     text-align: center;
     line-height: 90rpx;
     border-radius: 10rpx;
-    padding:0;
+    /*padding-left:0;*/
+    margin-left:0;
 }
 .select-btn-result{
     width: 222rpx;

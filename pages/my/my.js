@@ -51,6 +51,18 @@ Page(Object.assign({},Zan,Toast,{
         }
 
     },
+    onPullDownRefresh: function () {
+        let user=wx.getStorageSync('user');
+        if(user){
+            ajax.promise(url.url.user,{uid:user.uid}).then((json)=>{
+                console.log(json);
+                wx.setStorageSync('userId',json.data);
+                this.setData({
+                    golds:json.data.golds
+                })
+            })
+        }
+    },
     dialog(){
         let user=wx.getStorageSync('userId');
         if(user.state==0){//0是跳转上传,1是已经通过
@@ -66,6 +78,7 @@ Page(Object.assign({},Zan,Toast,{
                     obj.type=item.id;
                     obj.color='red'
                      return arr.push(obj)
+
                 })
                 arr.push({
                                 text: '取消',

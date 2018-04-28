@@ -40,9 +40,16 @@ Page({
     },
     // 确认上传
     confirm(){
-        let uid=wx.getStorageSync('user').uid;
-        ajax.promiseX(url.url.confirm,{uid:uid,url_2:this.data.url_2}).then((json)=>{
+        let user=wx.getStorageSync('user')
+        ajax.promiseX(url.url.confirm,{uid:user.uid,url_2:this.data.url_2}).then((json)=>{
             if(json.code=200){
+                    ajax.promise(url.url.user,{uid:user.uid}).then((json)=>{
+                        console.log(json);
+                        wx.setStorageSync('userId',json.data);
+                        this.setData({
+                            golds:json.data.golds
+                        })
+                    })
                 wx.showToast({
                     title: '提交成功'
                 })
@@ -56,8 +63,6 @@ Page({
                     title: '您已上传了营业执照，请等待审核结果！'
                 })
             }
-
-
         })
     }
 })

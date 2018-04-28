@@ -19,15 +19,15 @@ Page(Object.assign({},Zan,dialog,{
         markers: [{
             iconPath: "../image/ding.png",
             id: 0,
-            latitude: 30.659367,
-            longitude: 104.075729,
+            latitude: 23.099994,
+            longitude: 113.324520,
             width: 34,
             height: 50
         },{
             iconPath: "../image/three.png",
             id: 1,
-            latitude: 30.659367,
-            longitude: 104.075729,
+            latitude: 23.099994,
+            longitude: 103.985999,
             width: 32,
             height: 16
         }],
@@ -142,8 +142,42 @@ Page(Object.assign({},Zan,dialog,{
               success: res=>{
                 if (res.confirm) {
                     ajax.promise(url.url.testLat,{uid:id.id,address:this.data.value,type:this.data.active,mobile:this.data.phone}).then((json)=>{
-                        console.log(json)
-                        this.showZanDialog('')
+                        console.log(json.data.basevalue)
+                        switch (json.data.basevalue){
+                            case '0:<=3':
+                                console.log(123);
+                                // this.showZanDialog({
+                                //     title:'结果',
+                                //     message:'YES+3KM'
+                                // })
+                                this.showZanDialog({
+                                    title: '检验结果',
+                                    content: 'YES+10KM',
+                                    showCancel: false
+                                })
+                                break;
+                            case '>3:<=10':
+                                this.showZanDialog({
+                                    content: 'YES+10KM'
+                                })
+                                break
+                            case '>10:<=20':
+                                this.showZanDialog({
+                                    content: 'YES+20KM'
+                                })
+                                break
+                            case '>20:<=50':
+                                this.showZanDialog({
+                                    content: 'YES+5KM'
+                                })
+                                break
+                            case  '>50':
+                                this.showZanDialog({
+                                    content: 'NO+大于10KM'
+                                })
+                                break
+                        }
+                        // this.showZanDialog('')
                     })
                 }
               }
@@ -235,7 +269,7 @@ Page(Object.assign({},Zan,dialog,{
                 let markers=that.data.markers
                 markers[0].latitude=res.latitude
                 markers[0].longitude=res.longitude
-                markers[1].latitude=res.latitude-0.015
+                markers[1].latitude=res.latitude-0.08983
                 markers[1].longitude=res.longitude
                 circles.forEach((item)=>{
                     item.latitude=res.latitude
@@ -245,12 +279,46 @@ Page(Object.assign({},Zan,dialog,{
                     markers:markers,
                     circles:circles
                 })
+                that.mapCtx.getScale({
+                    success:(res)=>{
+                        console.log(res.scale)
+                        if(res.scale<8){
+                            let markers=that.data.markers
+
+                            that.setData({
+                                markers:markers[0]
+                            })
+                        }else if(res.scale==8||res.scale==9){
+                            // that.setData({
+                            //     markers:markers[0]
+                            // })
+                        }else{
+                            switch (res.scale){
+                                case 11:
+
+
+                            }
+                        }
+
+                    }
+                })
             }
         });
-        this.mapCtx.getScale({
-            success:(res)=>{
-                console.log(res.scale)
-            }
-        })
+
+
+        // this.mapCtx.getScale({
+        //     success:(res)=>{
+        //         console.log(res.scale)
+        //         switch (res.scale){
+        //             case 9:
+        //
+        //         }
+        //     }
+        // })
+    },
+    // 选择字母的显示隐藏
+    is:(num,)=>{
+        let markers=this.data.markers
+
     }
 }));
