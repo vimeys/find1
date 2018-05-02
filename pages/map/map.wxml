@@ -48,5 +48,22 @@
      bindregionchange="getCenterLocation"
      show-location style="width: 100%; height: 390px;"
      circles="{{circles}}">
-    <cover-view class="cover" wx:if="{{isCover}}"></cover-view>
+    <cover-view class="cover" wx:if="{{isCover}}">
+
+    </cover-view>
+
 </map>
+<cover-view class="dialog" wx:if="{{isCover}}">
+
+</cover-view>
+<cover-view class="dialog-module">
+    <cover-view class="dialog-title">
+        核验结果
+    </cover-view>
+    <cover-view class="dialog-result">
+        YES+10KM
+    </cover-view >
+    <cover-view class="dialog-btn">
+        确认
+    </cover-view>
+</cover-view>

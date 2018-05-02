@@ -15,7 +15,7 @@
         </view>
         <view class="login-list-input"><input type="text" password placeholder="请输入密码" placeholder-class="input" name="psssword"/></view>
     </view>
-    <button class="btn login-btn" form-type="submit" bindtap="test">登陆</button>
+    <button class="btn login-btn" form-type="submit" >登陆</button>
     <navigator url="../findPassword/findPassword">
         <view class="login-forgetPassword">忘记密码？</view>
     </navigator>

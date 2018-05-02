@@ -5,11 +5,12 @@ const url={};
 
 url.code=Url+'login/sendSms';//获取短信
 url.sign=Url+'login/register';//注册
+url.change=Url+'login/changePwd';//修改密码
 url.upload=Url+'index/get_img_url';//上传图片
 url.login=Url+'login/dologin';//登陆
 url.payList=Url+'index/rechargeList';//充值列表
 url.pay=Url+'pay/pay_now';//充值
-
+url.consumption=Url+'index/check';//获取消耗金币
 url.province=Url+'index/province';//获取省份
 url.city=Url+'index/city';//获取城市
 url.isAddr=Url+'active/addressTrue';//常用地址核验

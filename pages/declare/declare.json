@@ -1,1 +1,6 @@
-{}
+{
+  "backgroundTextStyle":"light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "声明/协议",
+  "navigationBarTextStyle":"black"
+}

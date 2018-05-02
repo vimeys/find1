@@ -23,7 +23,7 @@
         <view class="my-li-btn" >10金币/次</view>
     </view>
     <view class="my-li">
-        <view class="my-li-name">10金币/次</view>
+        <view class="my-li-name">联系客服</view>
         <view class="my-li-btn zan-icon zan-icon-arrow">   <button class="contentBtn" open-type="contact">  </button> </view>
     </view>
 </view>

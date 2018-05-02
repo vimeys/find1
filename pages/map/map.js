@@ -24,12 +24,19 @@ Page(Object.assign({},Zan,dialog,{
             width: 34,
             height: 50
         },{
-            iconPath: "../image/three.png",
+            iconPath: "../image/twenty.png",
             id: 1,
-            latitude: 23.099994,
-            longitude: 103.985999,
-            width: 32,
-            height: 16
+            latitude: 23.010164,
+            longitude: 113.324520,
+            width: 40,
+            height: 13
+        },{
+            iconPath: "../image/fifty.png",
+            id: 2,
+            latitude: 22.874769,
+            longitude: 113.324520,
+            width: 40,
+            height: 13
         }],
        
         // controls: [{
@@ -46,34 +53,33 @@ Page(Object.assign({},Zan,dialog,{
         circles:[{
             latitude: 23.099994,
             longitude: 113.324520,
-            color: '#FF0000DD',
+            color: '#FF8400DD',
             fillColor: '#7cb5ec00',
             radius: 1500,
-            strokeWidth: 2
+            strokeWidth: 15
         },{
             latitude: 23.099994,
             longitude: 113.324520,
-            color: '#FF0000DD',
+            color: '#FF8400DD',
             fillColor: '#7cb5ec00',
             radius: 5000,
-            strokeWidth: 2
+            strokeWidth: 1
         },
         {
             latitude: 23.099994,
             longitude: 113.324520,
-            color: '#FF0000DD',
-            fillColor: '#7cb5ec00',
-            radius: 25000,
-            strokeWidth: 2
-        },
-        {
-            latitude: 23.099994,
-            longitude: 113.324520,
-            color: '#FF000088',
+            color: '#FF8400DD',
             fillColor: '#7cb5ec00',
             radius: 10000,
-            strokeWidth: 2
-        }]
+            strokeWidth: 1
+        },{
+                latitude: 23.099994,
+                longitude: 113.324520,
+                color: '#FF8400DD',
+                fillColor: '#7cb5ec00',
+                radius: 25000,
+                strokeWidth: 1
+            }]
     },
     // 选择运营商
     select(){
@@ -147,7 +153,7 @@ Page(Object.assign({},Zan,dialog,{
             console.log(id);
             wx.showModal({
               title: '提示',
-              content: '本次核验需要消耗10个金币，确认核验吗？',
+              content: `本次核验需要消耗${this.data.gold}个金币，确认核验吗？,`,
               success: res=>{
                 if (res.confirm) {
                     ajax.promise(url.url.testLat,{uid:id.id,address:this.data.value,type:this.data.active,mobile:this.data.phone}).then((json)=>{
@@ -161,15 +167,15 @@ Page(Object.assign({},Zan,dialog,{
                                 // })
                                 this.showZanDialog({
                                     title: '检验结果',
-                                    content: 'YES+10KM',
+                                    content: 'YES+3KM',
                                     showCancel: false
                                 })
                                 break;
                             case '>3:<=10':
                                 this.showZanDialog({
                                     content: 'YES+10KM'
-                                })
-                                break
+                                });
+                                break;
                             case '>10:<=20':
                                 this.showZanDialog({
                                     content: 'YES+20KM'
@@ -177,12 +183,12 @@ Page(Object.assign({},Zan,dialog,{
                                 break
                             case '>20:<=50':
                                 this.showZanDialog({
-                                    content: 'YES+5KM'
+                                    content: 'YES+50KM'
                                 })
                                 break
-                            case  '>50':
+                            case  '>50:':
                                 this.showZanDialog({
-                                    content: 'NO+大于10KM'
+                                    content: 'NO+大于50KM'
                                 })
                                 break
                         }
@@ -250,9 +256,12 @@ Page(Object.assign({},Zan,dialog,{
         console.log(e.controlId)
     },
     onLoad(){
-        wx.getLocation({success:res=>{
-                console.log(res);
-            }})
+        // wx.getLocation({success:res=>{
+        //         console.log(res);
+        //     }})
+        this.setData({
+            gold:wx.getStorageSync('gold1').gold
+        })
     },
     // test(){
     //     let obj={}
@@ -262,14 +271,84 @@ Page(Object.assign({},Zan,dialog,{
     onShow(){
         this.mapCtx=wx.createMapContext('map');
     },
+    //地图控件
     getCenterLocation:function () {
         // console.log(this);
-        let that=this
-            this.mapCtx.getCenterLocation({
+        let that=this;
+        // that.mapCtx.getScale({
+        //     success:(res)=>{
+        //         console.log(res.scale)
+        //         if(res.scale<8){
+        //             let markers=that.data.markers
+        //             that.setData({
+        //                 markers:markers[0]
+        //             })
+        //             return
+        //             // that.mapCtx.getCenterLocation({
+        //             //     success: function(res){
+        //             //         console.log(res);
+        //             //         ajax.promise(url.url.getLot,{lat:res.longitude,lon:res.latitude}).then((json)=>{
+        //             //             that.setData({
+        //             //                 value:json.data
+        //             //             })
+        //             //         })
+        //             //         let circles=that.data.circles
+        //             //         let markers=that.data.markers
+        //             //         markers[0].latitude=res.latitude
+        //             //         markers[0].longitude=res.longitude
+        //             //         markers[1].latitude=res.latitude-0.08983
+        //             //         markers[1].longitude=res.longitude
+        //             //         circles.forEach((item)=>{
+        //             //             item.latitude=res.latitude
+        //             //             item.longitude=res.longitude
+        //             //         })
+        //             //         that.setData({
+        //             //             markers:markers,
+        //             //             circles:circles
+        //             //         })
+        //             //
+        //             //     }
+        //             // });
+        //         }else if(res.scale==10){
+        //             that.mapCtx.getCenterLocation({
+        //                 success: function(res){
+        //                     console.log(res);
+        //                     ajax.promise(url.url.getLot,{lat:res.longitude,lon:res.latitude}).then((json)=>{
+        //                         that.setData({
+        //                             value:json.data
+        //                         })
+        //                     })
+        //                     let circles=that.data.circles
+        //                     let markers=that.data.markers
+        //                     markers[0].latitude=res.latitude
+        //                     markers[0].longitude=res.longitude
+        //                     markers[1].latitude=res.latitude-0.08983
+        //                     markers[1].longitude=res.longitude
+        //                     circles.forEach((item)=>{
+        //                         item.latitude=res.latitude
+        //                         item.longitude=res.longitude
+        //                     })
+        //                     that.setData({
+        //                         markers:markers,
+        //                         circles:circles
+        //                     })
+        //
+        //                 }
+        //             });
+        //         }else{
+        //             switch (res.scale){
+        //                 case 11:
+        //
+        //
+        //             }
+        //         }
+        //
+        //     }
+        // })
+        that.mapCtx.getCenterLocation({
             success: function(res){
                 console.log(res);
                 ajax.promise(url.url.getLot,{lat:res.longitude,lon:res.latitude}).then((json)=>{
-                    // console.log(json)
                     that.setData({
                         value:json.data
                     })
@@ -288,42 +367,9 @@ Page(Object.assign({},Zan,dialog,{
                     markers:markers,
                     circles:circles
                 })
-                that.mapCtx.getScale({
-                    success:(res)=>{
-                        console.log(res.scale)
-                        if(res.scale<8){
-                            let markers=that.data.markers
 
-                            that.setData({
-                                markers:markers[0]
-                            })
-                        }else if(res.scale==8||res.scale==9){
-                            // that.setData({
-                            //     markers:markers[0]
-                            // })
-                        }else{
-                            switch (res.scale){
-                                case 11:
-
-
-                            }
-                        }
-
-                    }
-                })
             }
         });
-
-
-        // this.mapCtx.getScale({
-        //     success:(res)=>{
-        //         console.log(res.scale)
-        //         switch (res.scale){
-        //             case 9:
-        //
-        //         }
-        //     }
-        // })
     },
     // 选择字母的显示隐藏
     is:(num,)=>{

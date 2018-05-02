@@ -1,19 +1,19 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/signIn/signIn",
+    "pages/findPassword/findPassword",
     "pages/declare/declare",
     "pages/login/login",
       "pages/updata/updata",
     "pages/my/my",
-    "pages/signIn/signIn",
-    "pages/findPassword/findPassword",
     "pages/addr/addr",
     "pages/map/map"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "首页",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {

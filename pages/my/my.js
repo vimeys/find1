@@ -41,7 +41,7 @@ Page(Object.assign({},Zan,Toast,{
     onShow(){
         let user=wx.getStorageSync('user');
         if(user){
-            ajax.promise(url.url.user,{uid:user.uid}).then((json)=>{
+            ajax.promise(url.url.user,{uid:user.id}).then((json)=>{
                 if(json.data.state==1){
                     wx.removeStorageSync('isUp')
                 }

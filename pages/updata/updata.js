@@ -41,9 +41,9 @@ Page({
     // 确认上传
     confirm(){
         let user=wx.getStorageSync('user')
-        ajax.promiseX(url.url.confirm,{uid:user.uid,url_2:this.data.url_2}).then((json)=>{
+        ajax.promiseX(url.url.confirm,{uid:user.id,url_2:this.data.url_2}).then((json)=>{
             if(json.code=200){
-                    ajax.promise(url.url.user,{uid:user.uid}).then((json)=>{
+                    ajax.promise(url.url.user,{uid:user.id}).then((json)=>{
                         console.log(json);
                         wx.setStorageSync('userId',json.data);
                         this.setData({

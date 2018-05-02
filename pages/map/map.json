@@ -1,1 +1,6 @@
-{}
+{
+"backgroundTextStyle":"light",
+"navigationBarBackgroundColor": "#fff",
+"navigationBarTitleText": "位置核验",
+"navigationBarTextStyle":"black"
+}

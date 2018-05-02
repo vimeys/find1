@@ -1,1 +1,6 @@
-{}
+{
+  "backgroundTextStyle":"light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "其他核验",
+  "navigationBarTextStyle":"black"
+}

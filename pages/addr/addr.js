@@ -30,6 +30,10 @@ Page(Object.assign({},Zan,{
    */
   onLoad: function (options) {
     this.getrovince()//获取省份
+      this.setData({
+          gold1:wx.getStorageSync('gold2').gold,
+          gold2:wx.getStorageSync('gold3').gold
+      })
   },
     // 选择查询类型
     click(e){
@@ -109,8 +113,7 @@ Page(Object.assign({},Zan,{
           }
           wx.showModal({
               title: '提示',
-              content: '本次核验需要消耗10个金币，\n' +
-              '确认核验吗？',
+              content: `本次核验需要消耗${this.data.gold1}个金币，确认核验吗？`,
               success: res=>{
 
                   if (res.confirm) {
@@ -158,7 +161,7 @@ Page(Object.assign({},Zan,{
 
             wx.showModal({
                 title: '提示',
-                content: '本次核验需要消耗10个金币确认核验吗？',
+                content: `本次核验需要消耗${this.data.gold2}个金币确认核验吗？'`,
                 success: res=>{
                     if (res.confirm) {
                         let info=utils.storage('userId')
@@ -239,5 +242,6 @@ Page(Object.assign({},Zan,{
       this.setData({
           value:value
       })
-    }
+    },
+
 }))

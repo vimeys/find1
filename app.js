@@ -3,7 +3,7 @@ App({
     user:'',
   onLaunch: function () {
     // 展示本地存储能力
-
+    //   wx.clearStorageSync()
       let timed= wx.getStorageSync('time')||15247146049830;//之前缓存时间
       let user =wx.getStorageSync('user');//获取用户id
 
