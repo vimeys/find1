@@ -40,10 +40,8 @@ Page(Object.assign({},Zan,Toast,{
     },
     onShow(){
         let user=wx.getStorageSync('user');
-
         if(user){
             ajax.promise(url.url.user,{uid:user.uid}).then((json)=>{
-                console.log(json);
                 if(json.data.state==1){
                     wx.removeStorageSync('isUp')
                 }
@@ -125,33 +123,25 @@ Page(Object.assign({},Zan,Toast,{
                     });
                     console.log(arr);
                 });
-
             }
         }
-
-        console.log(this);
-
     },
     hrefLogin(e) {
         // app.url = "my/my"
         // wx.navigateTo({
         //     url:'../login/login'
         // })
-        console.log(app);
         if (!app.user && !app.time) {
             app.url = "my/my"
             wx.navigateTo({
                 url: '../signIn/signIn'
             })
         } else if (!app.user) {
-            console.log(app.user);
             app.url = "my/my"
             wx.navigateTo({
                 url: '../login/login'
             })
         }else{
-            console.log(this);
-            console.log(123);
             this.showZanToast('你已登陆')
         }
     }

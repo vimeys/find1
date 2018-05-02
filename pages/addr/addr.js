@@ -97,24 +97,35 @@ Page(Object.assign({},Zan,{
             url: '../login/login'
           })
       }else{//正常操作
-          wx.showModal({
-            title: '提示',
-            content: '本次核验需要消耗10个金币，\n' +
-            '确认核验吗？',
-            success: res=>{
-
-              if (res.confirm) {
-                  let info=utils.storage('userId');
-                  ajax.promise(url.url.isCity,{areaCode:this.data.cityCode,mobile:this.data.value,type:this.data.active,uid:info.id}).then((json)=>{
-                      console.log(json);
-                      this.setData({
-                            result:json.data.position,
-                          showResult:true
-                      })
-                  })
+          let obj={}
+          obj.areaCode=this.data.cityCode;
+          obj.mobile=this.data.value;
+          for(let key in obj){
+              if(obj[key]==''){
+                  this.showZanToast('请完成表单');
+                  return
               }
-            }
+
+          }
+          wx.showModal({
+              title: '提示',
+              content: '本次核验需要消耗10个金币，\n' +
+              '确认核验吗？',
+              success: res=>{
+
+                  if (res.confirm) {
+                      let info=utils.storage('userId');
+                      ajax.promise(url.url.isCity,{areaCode:this.data.cityCode,mobile:this.data.value,type:this.data.active,uid:info.id}).then((json)=>{
+                          console.log(json);
+                          this.setData({
+                              result:json.data.position,
+                              showResult:true
+                          })
+                      })
+                  }
+              }
           })
+
       }
     },
     // 常用地址核验
@@ -124,12 +135,12 @@ Page(Object.assign({},Zan,{
         if(!app.user&&!app.time){//跳转注册
             app.url='addr/addr';
             wx.navigateTo({
-                url: ''
+                url: '../signIn/signIn'
             })
         }else if(!app.user){//跳转登陆
             app.url='addr/addr';
             wx.navigateTo({
-                url: 'url: \'../signIn/signIn\''
+                url: '../login/login'
             })
         }else{//正常操作
             let value=e.detail.value;

@@ -14,7 +14,7 @@
         <view class="select-input">
             <picker range="{{province}}"  value="{{pIndex}}" range-key="name" bindchange="selectP">
                 <view class="select-picker">
-                    <view class="">{{province[pIndex].name}}</view>
+                    <view class="select-province">{{province[pIndex].name}}</view>
                     <view class="zan-icon zan-icon-arrow"></view>
                 </view>
             </picker>
@@ -25,7 +25,7 @@
         <view class="select-input">
             <picker disabled="{{disableCity}}" range="{{city}}" value="cIndex" range-key="name" bindchange="selectC">
                 <view class="select-picker">
-                    <view class="">{{city[cIndex].name?city[cIndex].name:'请选选择省份'}}</view>
+                    <view class="select-city">{{city[cIndex].name?city[cIndex].name:'请选选择省份'}}</view>
                     <view class="zan-icon zan-icon-arrow"></view>
                 </view>
             </picker>
@@ -74,7 +74,7 @@
                 <!--</picker>-->
             </view>
             <view class="select-input">
-                <input type="text" placeholder="请输入身份证" placeholder-class="ph-style" name="id"/>
+                <input type="text" placeholder="请输入身份证号码" placeholder-class="ph-style" name="id"/>
             </view>
         </view>
         <view class="select-city-li">
@@ -84,7 +84,7 @@
                 <!--</picker>-->
             </view>
             <view class="select-input">
-                <input type="text" placeholder="请输入手机号" placeholder-class="ph-style" name="addr"/>
+                <input type="text" placeholder="请输入省+市+区+详细地址" placeholder-class="ph-style" name="addr"/>
             </view>
         </view>
 </view>

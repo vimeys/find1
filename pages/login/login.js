@@ -29,6 +29,11 @@ Page(extend({}, Toast,{
     let obj={};
     obj.name=value.phone;
     obj.password=value.psssword;
+    for(let key in obj){
+      if(obj[key]){
+
+      }
+    }
     // obj.psssword='yangsen0';
     ajax.promise(url.url.login,obj).then((json)=>{
       wx.setStorageSync('user',json.userInfo);

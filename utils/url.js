@@ -5,7 +5,7 @@ const url={};
 
 url.code=Url+'login/sendSms';//获取短信
 url.sign=Url+'login/register';//注册
-url.upload=Url+'index/upload';//上传图片
+url.upload=Url+'index/get_img_url';//上传图片
 url.login=Url+'login/dologin';//登陆
 url.payList=Url+'index/rechargeList';//充值列表
 url.pay=Url+'pay/pay_now';//充值

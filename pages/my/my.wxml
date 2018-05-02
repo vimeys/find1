@@ -7,7 +7,7 @@
     <image src="../image/myBg.png"></image>
 </view>
 <view class="my-header">
-        <view class="my-header-login" bindtap="hrefLogin">注册/登录</view>
+        <view class="my-header-login" bindtap="hrefLogin">注册/登录{{}}</view>
     <view class="my-header-image">
         <image  src="{{headerImage}}"></image>
     </view>

@@ -26,6 +26,7 @@
     margin: 50rpx auto 30rpx;
 }
 .deal-content{
+    line-height: 46rpx;
     font-size: 26rpx;
     width: 620rpx;
     margin: auto;
@@ -60,6 +61,8 @@
 .declare-context{
     font-size: 26rpx;
     width: 620rpx;
-    margin: auto;
+    margin: 0 auto;
+    line-height: 46rpx;
     color:#666;
+    text-indent: 60rpx;
 }

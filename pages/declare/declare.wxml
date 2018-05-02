@@ -1,11 +1,14 @@
 <view class="deal">
     <image src="../image/indexLeft.png" class="deal-image"></image>
     <view class="deal-name">用户协议</view>
-    <view class="deal-content">内容要有受信号 号段 基站 4G等原因影响 可能存在误差，有运营商授权合法使用，第三方（使用者）和客户签有协议.</view>
+    <view class="deal-content">受信号 号段 基站 4G等原因影响 可能存在误差，有运营商授权合法使用，第三方（使用者）和客户签有协议.</view>
 </view>
 <view class="declare">
     <image class="declare-bgImage" src="../image/indexRight.png"></image>
     <view class="declare-name">免责声明</view>
-    <view class="declare-context">内容必须有：当前位置，城市核验为运营商实时返回结果，无任何缓存，公司对结果有效性不承担任何责任。
-        手机经纬度查询 对于联通手机，因为基站升级原因，有些基本可能匹配不到，这时可用区号查询功能，查询手机所在位置的区号做为补充定位成功。</view>
+    <view class="declare-context">当前位置，城市核验为运营商实时返回结果，无任何缓存，公司对结果有效性不承担任何责任。
+    </view>
+    <view class="declare-context">
+        手机经纬度查询 对于联通手机，因为基站升级原因，有些基本可能匹配不到，这时可用区号查询功能，查询手机所在位置的区号做为补充定位成功。
+    </view>
 </view>

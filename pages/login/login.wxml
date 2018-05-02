@@ -13,7 +13,7 @@
             <view class="login-list-icon"><image src="../image/password.png"></image></view>
             <view class="login-list-text">密码</view>
         </view>
-        <view class="login-list-input"><input type="text" password placeholder="请输入手机号码" placeholder-class="input" name="psssword"/></view>
+        <view class="login-list-input"><input type="text" password placeholder="请输入密码" placeholder-class="input" name="psssword"/></view>
     </view>
     <button class="btn login-btn" form-type="submit" bindtap="test">登陆</button>
     <navigator url="../findPassword/findPassword">

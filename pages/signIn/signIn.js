@@ -9,7 +9,7 @@ Page(Object.assign({},Zan,{
      * 页面的初始数据
      */
     data: {
-        radio:false,
+        radio:true,
         time:888888,
         num:60,
         second:'获取验证码'
@@ -77,6 +77,8 @@ Page(Object.assign({},Zan,{
                 }else{
                     this.showZanToast('请等待60S,再点击')
                 }
+            }else if(phone&&!radio){
+                this.showZanToast('请点击同意用户协议');
             }else{
                 this.showZanToast('请输入号码');
             }
@@ -88,47 +90,54 @@ Page(Object.assign({},Zan,{
             radio:!this.data.radio
         })
     },
+
     formSubmit(e){
-      let value=e.detail.value;
-      let obj={};
-      obj.mobile=value.name;
-        // obj.password=value.password;
-        obj.password=value.password;
-        obj.code=1234;
-      for(var key in obj){
-          if(obj[key]==""){
-              console.log(1);
-              this.showZanToast('请完成表单');
-            return
-          }
-      }
-        wx.login({
-            success: function(res) {
-                if (res.code) {
-                    console.log(res.code);
-                    // return
-                    obj.wxCode=res.code
-                    //发起网络请求
-                    // wx.request({
-                    //     url: 'https://test.com/onLogin',
-                    //     data: {
-                    //         code: res.code
-                    //     }
-                    // })
-                    ajax.promise(url.url.sign,obj).then((json)=>{
-                        console.log(json);
-                        wx.setStorageSync('time',new Date().getTime());
-                        wx.setStorageSync('user',json.data)
-                        wx.setStorageSync('userId',json.data)
-                        wx.switchTab({
-                            url: '../'+app.url
-                        })
-                    })
-                } else {
-                    console.log('登录失败！' + res.errMsg)
+        let radio=this.data.radio;
+        if(!radio){
+            let value=e.detail.value;
+            let obj={};
+            obj.mobile=value.name;
+            // obj.password=value.password;
+            obj.password=value.password;
+            obj.code=1234;
+            for(var key in obj){
+                if(obj[key]==""){
+                    console.log(1);
+                    this.showZanToast('请完成表单');
+                    return
                 }
             }
-        });
+            wx.login({
+                success: function(res) {
+                    if (res.code) {
+                        console.log(res.code);
+                        // return
+                        obj.wxCode=res.code
+                        //发起网络请求
+                        // wx.request({
+                        //     url: 'https://test.com/onLogin',
+                        //     data: {
+                        //         code: res.code
+                        //     }
+                        // })
+                        ajax.promise(url.url.sign,obj).then((json)=>{
+                            console.log(json);
+                            wx.setStorageSync('time',new Date().getTime());
+                            wx.setStorageSync('user',json.data)
+                            app.time=new Date().getTime();
+                            app.user=json.data
+                            wx.setStorageSync('userId',json.data)
+                            wx.switchTab({
+                                url: '../'+app.url
+                            })
+                        })
+                    } else {
+                        console.log('登录失败！' + res.errMsg)
+                    }
+                }
+            });
+        }
+
 
     },
     test(e){

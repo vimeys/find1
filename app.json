@@ -1,10 +1,10 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/declare/declare",
     "pages/login/login",
       "pages/updata/updata",
     "pages/my/my",
-    "pages/declare/declare",
     "pages/signIn/signIn",
     "pages/findPassword/findPassword",
     "pages/addr/addr",

@@ -135,6 +135,15 @@ Page(Object.assign({},Zan,dialog,{
             })
         }else{//正常调起查询
             let id=utils.storage('userId');
+            let obj={}
+            obj.address=this.data.value;
+            obj.mobile=this.data.phone;
+            for (let key in obj){
+                if(obj[key]==""){
+                    this.showZanToast('请完成表单');
+                    return
+                }
+            }
             console.log(id);
             wx.showModal({
               title: '提示',
